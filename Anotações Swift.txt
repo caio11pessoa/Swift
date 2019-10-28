@@ -1,0 +1,130 @@
+Swift - 28/10/2019
+
+-Simple Values
+>Use let to make a constant
+>Use var to make a variable
+-> You don't always have to write the type explicitly.
+->If the initial value doesn't provide enought information (or if there is no initial value), especify the type of by writing it after the variable, separeted by a colon (:)
+
+ex:
+
+	let implicitInteger = 70
+	let implicitDouble = 70.0
+	let explicitDouble: Double = 70
+
+-> Values are never implicitly converted to another type. If you need to convert a value to a different type, explicitly make an instance of the desired typee
+
+ex:
+	let laver = "The width is "
+	let width = 94
+	let widthLabel = label + String(width)
+
+->There's an even simpler way to include valus in string: write the values in parentheses, and write a backslash (\) before the parentheses.
+
+ex: 
+	let apples = 3
+	let oranges = 5
+	let appleSummary = "I have \(apples) apples."
+	let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+-> Use three double quotation marks (""") for strings that take up multiple lines.
+
+ex:
+	let quotation = """
+	I said "I have \(apples) apples."
+	And then I said "I have \(apples + oranges) pieces of fruit."
+	"""
+
+-> Create arrays and dictionaries using brackets( [] ), and access their elements by writing the index or key in brackets.
+
+ex:
+	var shoppingList = 
+		["catfish", "water", "tulips]
+	shoppingList[1] = "bottle of water"
+	
+	var occupations = [
+		"Malcom": "Captain",
+		"Kaylee": "Mechanic",
+	]
+	occupations["Jayne"] = 
+		"public Relations"
+
+-> Arrays automatically grow as you add elements.
+	
+ex:
+	shoppingList.append("blue paint")
+	print(shoppingList)
+
+
+-> To create an empty array or dictionary, use the initializer syntax.
+
+ex:
+	let emptyArrya= [String]()
+	let emptyDictionary = [String: Float]()
+
+-> If type information can be inferred, you can write an empty array as [] and an empty dictionary as [ : ]
+
+ex:
+	shoppingList = []
+	occupations = [:]
+
+- Control Flow
+
+Use if and Switch to make conditionals, and use for-in, while, and repeat-while to make loops.
+Parentheses around the condition or loop variable are optional. Braces around the body are required.
+
+ex: 
+	let individualScore = [75, 43, 103, 87, 12]
+	var teamScore = 0
+	for score in individualScore {
+		if score > 50 {
+			teamScore += 3
+		} else {
+			teamScore =+ 1
+		}
+	}
+	print(teamScore)
+	// Prints "11"
+
+-> You can use if and let together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contaisn nil to indicate that value is missing. Write a question mark (?) after the type of a value to mark the value as optional.
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
