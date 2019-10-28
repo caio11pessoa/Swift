@@ -1,5 +1,5 @@
 Swift - 28/10/2019
-
+https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
 -Simple Values
 >Use let to make a constant
 >Use var to make a variable
@@ -86,14 +86,40 @@ ex:
 	// Prints "11"
 
 -> You can use if and let together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contaisn nil to indicate that value is missing. Write a question mark (?) after the type of a value to mark the value as optional.
-		
 
+ex:		
+	var optionalString: String? = "Hello"
+	print(optionalString == nil)
+	// Prints "false"
 
+	var optionalName: String? = "John Appleseed"
+	var greeting = "Hello!"
+	if let name = optionalName {
+	    greeting = "Hello, \(name)"
+	}
 
+-> If the optional value is nil, the conditional is false and the code in braces is skipped.
+-> Another way to handle optional values is to provide a default value using the ?? operator. If the optional value is missing, the default value is used instead.
 
+ex:
+	let nickName: String? = nil
+	let fullName: String = "John Appleseed"
+	let informalGreeting = "Hi \(nickName ?? fullName)"
+-> Switches support any kind of data and a wide variety of comparison operations—they aren’t limited to integers and tests for equality.
 
-
-
+ex:
+	let vegetable = "red pepper"
+	switch vegetable {
+	case "celery":
+    		print("Add some raisins and make ants on a log.")
+	case "cucumber", "watercress":
+    		print("That would make a good tea sandwich.")
+	case let x where x.hasSuffix("pepper"):
+    		print("Is it a spicy \(x)?")
+	default:
+    		print("Everything tastes good in soup.")
+	}
+	// Prints "Is it a spicy red pepper?"
 
 
 
